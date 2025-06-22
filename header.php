@@ -75,6 +75,7 @@
           <a href="#team" class="nav-item nav-link">Team</a>
           <a href="#hubungi" class="nav-item nav-link">Contact</a> -->
           <a href="login.php" class="nav-item nav-link">Login</a>
+          <a href="Petunjuk_Pengisian.php" class="nav-item nav-link">Petunjuk Pengisian</a>
         </div>
 
       </div>

@@ -80,19 +80,24 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label>Pendidikan Ibu Terakhir (Tamat sekolah)</label>
-                    <select name="pendidikan_terakhir" class="form-control" required="required">
+                    <select name="pendidikan_terakhir" id="pendidikan_terakhir" class="form-control" required>
                       <option value="">Pilih Pendidikan Terakhir</option>
                       <?php
                       $pendidikan = ["SD", "SLTP", "SLTA", "D3", "S1", "S2", "S3", "Tidak sekolah"];
                       foreach ($pendidikan as $p) {
-                      ?>
-                        <option value="<?php echo $p; ?>"><?php echo $p; ?></option>
-                      <?php
+                        echo "<option value=\"$p\">$p</option>";
                       }
                       ?>
+                      <option value="lainnya">Lainnya..</option>
                     </select>
+
+                    <!-- Input custom jika pilih "Lainnya" -->
+                    <div id="lainnya_input_wrapper" style="display: none; margin-top: 10px;">
+                      <input type="text" name="pendidikan_lainnya" id="pendidikan_lainnya" class="form-control" placeholder="Isi pendidikan terakhir anda...">
+                    </div>
                   </div>
                 </div>
+
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label>Alamat</label>
@@ -140,29 +145,35 @@
                   </div>
                 </div>
 
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>Berat badan sebelum hamil</label>
-                    <input type="number" name="berat_badan_sebelum_hamil" class="form-control" required="required" placeholder="">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Berat badan sebelum hamil</label>
+                      <input type="text" name="berat_badan_sebelum_hamil" class="form-control berat-auto" required placeholder="Contoh: 55,5 atau 55.5">
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>Berat badah saat kehamilan sekarang (Kg)</label>
-                    <input type="number" name="berat_badan_sekarang" class="form-control" required="required" placeholder="">
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Berat badan saat kehamilan sekarang (Kg)</label>
+                      <input type="text" name="berat_badan_sekarang" class="form-control berat-auto" required placeholder="Contoh: 62,3 atau 62.3">
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>Tinggi badan</label>
-                    <input type="number" name="tinggi_badan" class="form-control" required="required" placeholder="">
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Tinggi badan (cm)</label>
+                      <input type="text" name="tinggi_badan" class="form-control berat-auto" required placeholder="Contoh: 160">
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>Berapa ukuran Lingkar Lengan Atas ibu (LILA)</label>
-                    <input type="number" name="lila" class="form-control" required="required" placeholder="">
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Berapa ukuran Lingkar Lengan Atas ibu (LILA)</label>
+                      <input type="text" name="lila" class="form-control berat-auto" required placeholder="Contoh: 24,5 atau 24.5">
+                    </div>
                   </div>
+
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
@@ -184,17 +195,7 @@
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <div class="form-group">
-                    <label>Apakah ibu hamil rutin minum tablet tambah darah atau vitamin ibu hamil secara teratur sesuai dosis minimal 270 biji selama kehamilan</label>
-                    <div>
-                      <input type="radio" id="tablet_tambah_darah_ya" name="tablet_tambah_darah" value="Ya" required>
-                      <label for="tablet_tambah_darah_ya">Ya</label>
-                    </div>
-                    <div>
-                      <input type="radio" id="tablet_tambah_darah_tidak" name="tablet_tambah_darah" value="Tidak" required>
-                      <label for="tablet_tambah_darah_tidak">Tidak</label>
-                    </div>
-                  </div>
+
                 </div>
               </div>
               <br>
@@ -211,22 +212,29 @@
               <div class="form-group">
                 <label>Berapa kali ibu kunjungan ke tenaga kesehatan (Bidan/Dokter kandungan/puskesmas) untuk pemeriksaan kehamilan:</label>
                 <div>
-                  <label>Usia kehamilan 0-3 bulan:</label>
+                  <label>Usia kehamilan 12 minggu pertama atau 0-3 bulan </label>
                   <input type="number" name="kunjungan_0_3_bidan" class="form-control" placeholder="Dengan bidan ... kali" required>
                   <input type="number" name="kunjungan_0_3_dokter" class="form-control" placeholder="Dengan dokter ... kali" required>
                 </div>
                 <div>
-                  <label>Usia kehamilan >3 sampai kurang dari 7 bulan: </label>
+                  <label>Usia kehamilan 12–24 minggu (lebih dari 3 sampai kurang dari 7 bulan)</label>
                   <input type="number" name="kunjungan_3_7_bidan" class="form-control" placeholder="Dengan bidan ... kali" required>
                 </div>
                 <div>
-                  <label>Usia kehamilan > 7 sampai 9 bulan:</label>
+                  <label>Usia kehamilan diatas 24 minggu (lebih dari 7 sampai 9 bulan):</label>
                   <input type="number" name="kunjungan_7_9_bidan" class="form-control" placeholder="Dengan bidan ... kali" required>
                   <input type="number" name="kunjungan_7_9_dokter" class="form-control" placeholder="Dengan dokter ... kali" required>
                 </div>
               </div>
               <div class="form-group">
-                <label>Apakah ibu sudah memasang stiker P4K didepan rumah:</label>
+                <!-- Gambar ilustrasi -->
+                <div class="mb-2">
+                  <img src="img/periksa1.png" alt="Contoh Stiker P4K 1" style="max-width: 100%; height: 250px; margin-bottom: 10px;">
+                  <img src="img/periksa2.png" alt="Contoh Stiker P4K 2" style="max-width: 100%; height: 250px;">
+                </div>
+
+                <!-- Pertanyaan -->
+                <label>Apakah ibu sudah memasang stiker P4K di depan rumah:</label>
                 <div>
                   <input type="radio" id="stiker_p4k_yes" name="stiker_p4k" value="yes" required>
                   <label for="stiker_p4k_yes">Ya</label>
@@ -236,8 +244,9 @@
                   <label for="stiker_p4k_no">Tidak</label>
                 </div>
               </div>
+
               <div class="form-group">
-                <label>Apakah Ibu hamil masuk kelas ibu hamil 4x pertemuan:</label>
+                <label>apakah ibu sudah mengikuti kelas ibu hamil:</label>
                 <div>
                   <input type="radio" id="kelas_ibu_yes" name="kelas_ibu" value="yes" required>
                   <label for="kelas_ibu_yes">Ya</label>
@@ -248,7 +257,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>Apakah ibu hamil rutin minum tablet tambah darah atau vitamin ibu hamil secara teratur sesuai dosis minimal 270 biji selama:</label>
+                <label>Apakah ibu mengkonsumsi tablet tambah darah setiap hari secara teratur:</label>
                 <div>
                   <input type="radio" id="vitamin_yes" name="vitamin" value="yes" required>
                   <label for="vitamin_yes">Ya</label>
@@ -401,3 +410,27 @@
 <br>
 <br>
 <?php include 'footer.php'; ?>
+
+<script>
+  document.querySelector('form').addEventListener('submit', function() {
+    document.querySelectorAll('.berat-auto').forEach(function(input) {
+      input.value = input.value.replace(',', '.');
+    });
+  });
+
+
+
+  const selectPendidikan = document.getElementById('pendidikan_terakhir');
+  const lainnyaWrapper = document.getElementById('lainnya_input_wrapper');
+  const inputLainnya = document.getElementById('pendidikan_lainnya');
+
+  selectPendidikan.addEventListener('change', function() {
+    if (this.value === 'lainnya') {
+      lainnyaWrapper.style.display = 'block';
+      inputLainnya.setAttribute('required', 'required'); // wajib diisi
+    } else {
+      lainnyaWrapper.style.display = 'none';
+      inputLainnya.removeAttribute('required'); // tidak wajib
+    }
+  });
+</script>
