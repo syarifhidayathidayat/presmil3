@@ -1,0 +1,79 @@
+.survey {
+    padding-top: 130px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.ml-3,
+.mx-3 {
+    margin-left: 1.5rem !important;
+}
+
+/* Aturan umum untuk navbar */
+.navbar {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 7.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Menghapus padding-top pada tampilan mobile */
+@media (max-width: 991.98px) {
+
+    /* Aturan untuk ukuran layar tablet ke bawah */
+    .navbar {
+        padding-top: 0;
+        /* Hilangkan padding-top */
+    }
+}
+
+.badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+/* animasi blink */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.alert-blink {
+    animation: blink 1s infinite;
+}
+
+/* Informed Consent Modal Styles */
+#informedConsentModal .modal-content {
+    font-size: 0.805rem;
+    /* Ukuran font lebih kecil */
+}
+
+#informedConsentModal .modal-body {
+    line-height: 1.5;
+    /* Jarak antar baris */
+}
+
+#informedConsentModal .modal-header,
+#informedConsentModal .modal-footer {
+    font-size: 0.805rem;
+    /* Ukuran font lebih kecil untuk header dan footer */
+}
+
+#informedConsentModal .modal-footer .btn {
+    font-size: 0.75rem;
+    /* Ukuran font lebih kecil untuk tombol */
+}

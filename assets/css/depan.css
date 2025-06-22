@@ -1,0 +1,58 @@
+.bg-presmil {
+	background: linear-gradient(to right, #a86bf4, #8a63e2);
+	background-size: 200% 100%;
+	background-position: 100% 0;
+	transition: background-position 0.5s ease;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	border-bottom: 0px solid #dee2e6 !important;
+	animation: colorChange 2s infinite alternate;
+	/* Animasi warna selama 5 detik dengan efek looping dan bergantian */
+}
+
+.fixed-top {
+	top: 0
+}
+
+@keyframes colorChange {
+	from {
+		background-position: 100% 0;
+	}
+
+	to {
+		background-position: 0 0;
+	}
+}
+
+.vh-100 {
+	height: 100vh;
+}
+
+.content-section {
+	background: #f7f8fd;
+	padding: 40px 0 90px 0;
+}
+
+nav.navbar {
+	border-radius: 0px;
+}
+
+.btn,
+.card,
+input {
+
+	border-radius: 0px;
+}
+
+.badan {
+	min-height: 600px;
+}
+
+body {
+	/* background: url(../../gambar/sistem/bg.webp); */
+	font-size: 14.5px;
+}
+
+.navbar-brand {
+	display: inline-block;
+	padding: 0%
+}
