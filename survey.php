@@ -229,8 +229,8 @@
               <div class="form-group">
                 <!-- Gambar ilustrasi -->
                 <div class="mb-2">
-                  <img src="img/periksa1.png" alt="Contoh Stiker P4K 1" style="max-width: 100%; height: 120px; margin-bottom: 10px;">
-                  <img src="img/periksa2.png" alt="Contoh Stiker P4K 2" style="max-width: 100%; height: 120px;">
+                  <img src="img/periksa1.png" alt="Contoh Stiker P4K 1" style="max-width: 100%; height: 250px; margin-bottom: 10px;">
+                  <img src="img/periksa2.png" alt="Contoh Stiker P4K 2" style="max-width: 100%; height: 250px;">
                 </div>
 
                 <!-- Pertanyaan -->
