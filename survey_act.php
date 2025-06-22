@@ -25,6 +25,14 @@ $bayi_tabung = ($_POST['bayi_tabung'] == 'yes') ? 'yes' : 'no'; // Mengubah nila
 $tablet_tambah_darah = ($_POST['tablet_tambah_darah'] == 'Ya') ? 1 : 0; // Mengubah nilai sesuai dengan radio button
 // Kolom baru yang ditambahkan
 $pendidikan_terakhir = $_POST['pendidikan_terakhir'];
+
+if ($pendidikan_terakhir === 'lainnya' && !empty($_POST['pendidikan_lainnya'])) {
+	$pendidikan_terakhir = trim($_POST['pendidikan_lainnya']);
+}
+
+$pendidikan_terakhir = mysqli_real_escape_string($koneksi, $pendidikan_terakhir);
+
+
 $berat_badan_sebelum_hamil = $_POST['berat_badan_sebelum_hamil'];
 $berat_badan_sekarang = $_POST['berat_badan_sekarang'];
 $tinggi_badan = $_POST['tinggi_badan'];
